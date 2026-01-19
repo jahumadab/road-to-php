@@ -688,57 +688,53 @@ a{ color: inherit; }
   }
 }
 /* ============================
-   Bigger UI on large screens
+   Smaller UI on large screens
    ============================ */
 
-/* 1) más ancho general */
+/* keep the default width */
 :root{
-  --max: 1320px; /* antes 1120px */
+  --max: 1120px;
 }
 
-/* 2) escala en pantallas grandes */
+/* reduce scale on large screens */
 @media (min-width: 1100px){
-  body{ font-size: 20px; }
+  body{ font-size: 17px; }
 
   .page{
-    padding: 6px 20px 44px; /* sube el contenido un poco */
+    padding: 8px 20px 36px;
   }
 
   .title{
-    font-size: clamp(38px, 4.6vw, 68px);
-    margin: 22px 0 16px;
+    font-size: clamp(30px, 3.6vw, 52px);
+    margin: 18px 0 12px;
   }
 
   .layout{
-    gap: 26px;
-    grid-template-columns: 1.7fr 1fr; /* un pelín más protagonista el lado izquierdo */
+    gap: 20px;
+    grid-template-columns: 1.6fr 1fr;
   }
 
-  /* Today card más grande */
-  .card--today{ min-height: 190px; }
-  .today{ padding: 30px 30px 26px; }
+  .card--today{ min-height: 170px; }
+  .today{ padding: 22px 22px 20px; }
 
-  .today__place{ font-size: 26px; }
-  .today__date{ font-size: 15px; }
+  .today__place{ font-size: 21px; }
+  .today__date{ font-size: 14px; }
 
-  .today__icon{ width: 60px; height: 60px; }
-  .today__temp-value{ font-size: 84px; }
-  .today__deg{ font-size: 48px; }
+  .today__icon{ width: 52px; height: 52px; }
+  .today__temp-value{ font-size: 70px; }
+  .today__deg{ font-size: 40px; }
 
-  /* Stats más grandes */
-  .card--stat{ padding: 18px 18px 16px; }
-  .stat__label{ font-size: 15px; }
-  .stat__value{ font-size: 32px; }
+  .card--stat{ padding: 16px 16px 14px; }
+  .stat__label{ font-size: 14px; }
+  .stat__value{ font-size: 28px; }
 
-  /* Daily cards un poco más grandes */
-  .card--day{ padding: 16px 12px 14px; }
-  .day__name{ font-size: 15px; }
-  .day__icon{ width: 36px; height: 36px; }
-  .day__temps{ font-size: 15px; }
+  .card--day{ padding: 14px 12px 12px; }
+  .day__name{ font-size: 14px; }
+  .day__icon{ width: 34px; height: 34px; }
+  .day__temps{ font-size: 14px; }
 
-  /* Hourly */
-  .card--hourly{ padding: 18px; }
-  .hour{ padding: 14px 14px; }
-  .hour__time{ font-size: 16px; }
-  .hour__temp{ font-size: 16px; }
+  .card--hourly{ padding: 16px; }
+  .hour{ padding: 12px 12px; }
+  .hour__time{ font-size: 14px; }
+  .hour__temp{ font-size: 14px; }
 }

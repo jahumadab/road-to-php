@@ -91,7 +91,7 @@ $articles = $pdo->query('SELECT id, title, created_at FROM articles ORDER BY cre
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>BLOG-PERSONAL</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -99,7 +99,7 @@ $articles = $pdo->query('SELECT id, title, created_at FROM articles ORDER BY cre
         <div class="header">
             <div>
                 <div class="badge">Admin</div>
-                <div class="brand">My Personal Blog</div>
+                <div class="brand">BLOG-PERSONAL</div>
             </div>
             <div class="actions">
                 <?php if (is_admin()) { ?>
@@ -112,8 +112,8 @@ $articles = $pdo->query('SELECT id, title, created_at FROM articles ORDER BY cre
         </div>
 
         <?php if (!is_admin()) { ?>
-            <div class="card">
-                <form class="form" method="POST">
+            <div class="card login-card">
+                <form class="form login-form" method="POST">
                     <input type="hidden" name="action" value="login">
                     <div>
                         <label>Usuario</label>
@@ -136,7 +136,7 @@ $articles = $pdo->query('SELECT id, title, created_at FROM articles ORDER BY cre
 
             <?php if ($action === 'new') { ?>
                 <div class="card">
-                    <form class="form" method="POST">
+                    <form class="form edit-form" method="POST">
                         <input type="hidden" name="action" value="create">
                         <div>
                             <label>Titulo</label>

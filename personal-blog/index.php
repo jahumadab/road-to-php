@@ -32,13 +32,13 @@ $monthNames = [
 ];
 
 $calendar = [];
-foreach ($articles as $article) {
-    $timestamp = strtotime($article['created_at']);
+foreach ($articles as $calendarArticle) {
+    $timestamp = strtotime($calendarArticle['created_at']);
     $year = date('Y', $timestamp);
     $month = date('m', $timestamp);
     $calendar[$year][$month][] = [
-        'id' => $article['id'],
-        'title' => $article['title'],
+        'id' => $calendarArticle['id'],
+        'title' => $calendarArticle['title'],
         'date' => date('Y-m-d', $timestamp),
     ];
 }
@@ -50,15 +50,14 @@ foreach ($articles as $article) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Blog</title>
+    <title>BLOG-PERSONAL</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="container">
         <div class="header">
             <div>
-                <div class="badge">Lecturas del dia</div>
-                <div class="brand">My Personal Blog</div>
+                <div class="brand">BLOG-PERSONAL</div>
             </div>
         </div>
 
@@ -70,9 +69,9 @@ foreach ($articles as $article) {
 
                 <?php if ($article) { ?>
                     <article class="card">
-                        <h2><?= htmlspecialchars($article['title']) ?></h2>
+                        <h2><?= htmlspecialchars($article['title'] ?? '') ?></h2>
                         <div class="meta">Publicado el <?= date('Y-m-d', strtotime($article['created_at'])) ?></div>
-                        <p><?= nl2br(htmlspecialchars($article['content'])) ?></p>
+                        <p><?= nl2br(htmlspecialchars($article['content'] ?? '')) ?></p>
                         <div class="actions">
                             <a class="button light" href="index.php">Volver al listado</a>
                         </div>

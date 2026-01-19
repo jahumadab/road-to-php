@@ -205,15 +205,15 @@ if ($isToday && empty($hourlyFiltered) && !empty($hourly)) {
         <h1 class="title">Cómo está el cielo ahora ?</h1>
 
         <form class="search" action="" method="get" role="search" aria-label="Buscar una ubicación">
-            <label class="sr-only" for="q">Search for a place</label>
+            <label class="sr-only" for="q">Buscar un lugar</label>
 
             <div class="search__field">
                 <img class="search__icon" src="./assets/images/icon-search.svg" alt="" aria-hidden="true" />
-                <input id="q" name="location" type="search" placeholder="Search for a place..." autocomplete="off"
+                <input id="q" name="location" type="search" placeholder="Buscar un lugar..." autocomplete="off"
                     value="<?= safe($locationInput) ?>" />
             </div>
 
-            <button class="btn btn--primary" type="submit">Search</button>
+            <button class="btn btn--primary" type="submit">Buscar</button>
         </form>
 
         <?php if ($message): ?>
